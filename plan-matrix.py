@@ -154,15 +154,15 @@ def main() -> None:
                         and cuda_version_parsed >= Version("12.6")
                     )
 
-                                        row = {
-                            "target-arch": target_arch,
-                            "torch-version": str(torch_version_parsed),
-                            "python-version": python_version,
-                            "cuda-version": cuda_version,
-                            "cxx11-abi": "TRUE" if cxx11_abi else "FALSE",
-                        }
+                    row = {
+                        "target-arch": target_arch,
+                        "torch-version": str(torch_version_parsed),
+                        "python-version": python_version,
+                        "cuda-version": cuda_version,
+                        "cxx11-abi": "TRUE" if cxx11_abi else "FALSE",
+                    }
 
-                        if row not in EXCLUSIONS:
+                    if row not in EXCLUSIONS:
                             rows.append(row)
 
     # Transform each row to add various nice-to-have representations of fields.
