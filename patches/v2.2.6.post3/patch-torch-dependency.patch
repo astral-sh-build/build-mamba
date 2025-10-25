@@ -1,13 +1,50 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index 5831fe6..fcbb278 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -7,7 +7,7 @@ authors = [
+     { name = "Albert Gu", email = "agu@cs.cmu.edu" }
+ ]
+ requires-python = ">= 3.9"
+-dynamic = ["version"]
++dynamic = ["dependencies", "version"]
+ license = { file = "LICENSE" }  # Include a LICENSE file in your repo
+ keywords = ["cuda", "pytorch", "state-space model"]
+ classifiers = [
+@@ -15,15 +15,6 @@ classifiers = [
+     "License :: OSI Approved :: Apache Software License",
+     "Operating System :: Unix"
+ ]
+-dependencies = [
+-    "torch",
+-    "triton",
+-    "ninja",
+-    "einops",
+-    "transformers",
+-    "packaging",
+-    "setuptools>=61.0.0",
+-]
+ [project.urls]
+ Repository = "https://github.com/state-spaces/mamba"
+ 
 diff --git a/setup.py b/setup.py
-index 3a443f9..ad3e121 100755
+index 3a443f9..e6e1087 100755
 --- a/setup.py
 +++ b/setup.py
-@@ -392,7 +392,7 @@ setup(
+@@ -392,12 +392,12 @@ setup(
      },
      python_requires=">=3.9",
      install_requires=[
 -        "torch",
+-        "packaging",
 +        f"torch=={TORCH_MAJOR}.{TORCH_MINOR}.*",
-         "packaging",
++        "triton",
          "ninja",
          "einops",
+-        "triton",
+         "transformers",
+-        # "causal_conv1d>=1.4.0",
++        "packaging",
++        "setuptools>=61.0.0",
+     ],
+ )
