@@ -10,7 +10,7 @@ on:
       MAMBA_VERSION:
         description: "Mamba version"
         required: true
-        default: "v2.3.0"
+        default: "v2.3.2.post1"
         type: string
   release:
     types: [created]
@@ -74,7 +74,7 @@ jobs:
           elif [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ]; then
             MAMBA_VERSION="${INPUTS_MAMBA_VERSION}"
           else
-            MAMBA_VERSION="v2.3.0"
+            MAMBA_VERSION="v2.3.2.post1"
           fi
           echo "version=${MAMBA_VERSION}" >> $GITHUB_OUTPUT
           echo "Using Mamba version: ${MAMBA_VERSION}"
