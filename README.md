@@ -1,4 +1,4 @@
-# Mamba wheels
+# build-mamba
 
 Pre-built Linux wheels for [Mamba](https://github.com/state-spaces/mamba), across Python,
 PyTorch, CUDA, and CPU architectures.
