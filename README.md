@@ -11,25 +11,28 @@ built against, such as `mamba-ssm==2.3.2.post1+cu.12.8.torch.2.11`, and requires
 release.
 
 Pre-built wheels are available on [Astral's GPU indexes](https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/index.html).
-For example, to add a CUDA 12.4 build to a uv project:
+For example, to install a CUDA 12.8 build:
 
 ```console
-$ uv add mamba-ssm --index astral-cu124=https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/simple/cu124/
+$ uv add mamba-ssm --index astral-cu128=https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/simple/cu128/
 ```
 
-This adds the dependency and pins it to the index in `pyproject.toml`:
+This configures the index and uses it as the source for `mamba-ssm`:
 
 ```toml
 [tool.uv.sources]
-mamba-ssm = { index = "astral-cu124" }
+mamba-ssm = { index = "astral-cu128" }
 
 [[tool.uv.index]]
-name = "astral-cu124"
-url = "https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/simple/cu124/"
+name = "astral-cu128"
+url = "https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/simple/cu128/"
 ```
 
-Choose the index that matches the CUDA version used by PyTorch, such as `cu121`, `cu124`, `cu126`,
-`cu128`, `cu129`, or `cu130`.
+Or, with `uv pip`:
+
+```console
+$ uv pip install --index https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/simple/cu128/ mamba-ssm
+```
 
 ## Supported versions
 
@@ -42,16 +45,16 @@ Wheels are available for the following `mamba-ssm` versions:
 
 The latest release, Mamba 2.3.2.post1, supports the following combinations:
 
-| PyTorch | Python | `x86_64` CUDA | `aarch64` CUDA |
-| --- | --- | --- | --- |
-| 2.4.1 | 3.9–3.12 | 12.1, 12.4 | — |
-| 2.5.1 | 3.9–3.12 | 12.1, 12.4 | — |
-| 2.6.0 | 3.9–3.12 | 12.4, 12.6 | 12.6 |
-| 2.7.1 | 3.9–3.13 | 12.6, 12.8 | 12.8 |
-| 2.8.0 | 3.9–3.13 | 12.6, 12.8, 12.9 | 12.9 |
-| 2.9.1 | 3.10–3.14 | 12.6, 12.8, 12.9, 13.0 | 12.6, 12.8, 12.9, 13.0 |
-| 2.10.0 | 3.10–3.14 | 12.6, 12.8, 12.9, 13.0 | 12.6, 12.8, 12.9, 13.0 |
-| 2.11.0 | 3.10–3.14 | 12.6, 12.8, 12.9, 13.0 | 12.6, 12.8, 12.9, 13.0 |
+| PyTorch | Python    | `x86_64` CUDA          | `aarch64` CUDA         |
+| ------- | --------- | ---------------------- | ---------------------- |
+| 2.4.1   | 3.9–3.12  | 12.1, 12.4             | —                      |
+| 2.5.1   | 3.9–3.12  | 12.1, 12.4             | —                      |
+| 2.6.0   | 3.9–3.12  | 12.4, 12.6             | 12.6                   |
+| 2.7.1   | 3.9–3.13  | 12.6, 12.8             | 12.8                   |
+| 2.8.0   | 3.9–3.13  | 12.6, 12.8, 12.9       | 12.9                   |
+| 2.9.1   | 3.10–3.14 | 12.6, 12.8, 12.9, 13.0 | 12.6, 12.8, 12.9, 13.0 |
+| 2.10.0  | 3.10–3.14 | 12.6, 12.8, 12.9, 13.0 | 12.6, 12.8, 12.9, 13.0 |
+| 2.11.0  | 3.10–3.14 | 12.6, 12.8, 12.9, 13.0 | 12.6, 12.8, 12.9, 13.0 |
 
 ## License
 
