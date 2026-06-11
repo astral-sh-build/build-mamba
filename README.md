@@ -3,15 +3,12 @@
 Pre-built Linux wheels for [Mamba](https://github.com/state-spaces/mamba), across Python,
 PyTorch, CUDA, and CPU architectures.
 
-These wheels rebuild the upstream `mamba-ssm` package with a small set of packaging changes for
-consistent installation.
-
 ## Installation
 
-Following the PyTorch convention, the wheels are published to a separate package index for each
-CUDA version. Each wheel has a local version suffix that identifies the CUDA and PyTorch versions
-it was built against, such as `mamba-ssm==2.3.2.post1+cu.12.8.torch.2.11`, and requires the matching
-PyTorch release.
+Following the PyTorch convention, artifacts are published to a separate index for each CUDA
+version. Each wheel has a local version suffix that identifies the CUDA and PyTorch versions it was
+built against, such as `mamba-ssm==2.3.2.post1+cu.12.8.torch.2.11`, and requires the matching PyTorch
+release.
 
 Pre-built wheels are available on [Astral's GPU indexes](https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/index.html).
 For example, to install a CUDA 12.4 build:
