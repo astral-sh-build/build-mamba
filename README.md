@@ -11,10 +11,21 @@ built against, such as `mamba-ssm==2.3.2.post1+cu.12.8.torch.2.11`, and requires
 release.
 
 Pre-built wheels are available on [Astral's GPU indexes](https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/index.html).
-For example, to install a CUDA 12.4 build:
+For example, to add a CUDA 12.4 build to a uv project:
 
 ```console
-$ uv pip install --index https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/simple/cu124/ mamba-ssm
+$ uv add mamba-ssm --index astral-cu124=https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/simple/cu124/
+```
+
+This adds the dependency and pins it to the index in `pyproject.toml`:
+
+```toml
+[tool.uv.sources]
+mamba-ssm = { index = "astral-cu124" }
+
+[[tool.uv.index]]
+name = "astral-cu124"
+url = "https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/simple/cu124/"
 ```
 
 Choose the index that matches the CUDA version used by PyTorch, such as `cu121`, `cu124`, `cu126`,
