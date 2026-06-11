@@ -22,7 +22,7 @@ Choose the index that matches the CUDA version used by PyTorch, such as `cu121`,
 
 ## Supported versions
 
-Rebuilds are available for the following Mamba versions:
+Wheels are available for the following `mamba-ssm` versions:
 
 - [`2.3.2.post1`](https://github.com/astral-sh-build/build-mamba/releases/tag/v2.3.2.post1)
 - [`2.3.1`](https://github.com/astral-sh-build/build-mamba/releases/tag/v2.3.1)
