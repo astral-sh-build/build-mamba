@@ -173,7 +173,8 @@ jobs:
               --license-expression "Apache-2.0 AND BSD-3-Clause" \
               --license-file "LICENSE:LICENSE" \
               --license-file "AUTHORS:AUTHORS" \
-              --license-file "build_scripts/licenses/nvidia-uninitialized-copy/LICENSE.txt:third-party/nvidia-uninitialized-copy/LICENSE.txt"
+              --license-file "build_scripts/licenses/nvidia-uninitialized-copy/LICENSE.txt:third-party/nvidia-uninitialized-copy/LICENSE.txt" \
+              --license-file "build_scripts/licenses/nvidia-uninitialized-copy/SOURCE.txt:third-party/nvidia-uninitialized-copy/SOURCE.txt"
           done
         env:
           MAMBA_VERSION: ${{ steps.mamba-version.outputs.version }}
