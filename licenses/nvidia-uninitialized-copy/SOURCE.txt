@@ -1,0 +1,7 @@
+This notice applies to NVIDIA-originated code in the upstream Mamba source:
+
+Repository: https://github.com/state-spaces/mamba
+Path: csrc/selective_scan/uninitialized_copy.cuh
+
+That header is included by csrc/selective_scan/reverse_scan.cuh, which is used
+by the selective_scan_cuda extension built for these wheels.
