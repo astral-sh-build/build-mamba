@@ -67,7 +67,7 @@ jobs:
           if [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ]; then
             TAG="${INPUTS_RELEASE_TAG}"
             # Remove -rN suffix if present
-            MAMBA_VERSION=$(printf '%s\\n' "${TAG}" | sed -E 's/-r[0-9]+$//')
+            MAMBA_VERSION=$(sed -E 's/-r[0-9]+$//' <<<"${TAG}")
           else
             MAMBA_VERSION="v2.3.2.post1"
           fi
