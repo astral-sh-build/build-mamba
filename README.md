@@ -34,6 +34,19 @@ Or, with `uv pip`:
 $ uv pip install --index https://wheels.astral.sh/simple/cu128/ mamba-ssm
 ```
 
+## GPU tests
+
+The `tests/` directory contains a locked uv project that installs the published
+CUDA 12.8 Mamba and Causal Conv1d wheels from the Astral index alongside their
+matching PyTorch build. Run the tests on a Modal GPU with:
+
+```console
+$ modal run tests/modal_app.py
+```
+
+Modal installs the locked dependencies in its Linux image and runs the pytest
+suite on an NVIDIA A10G. The CUDA wheels are not installed on the local machine.
+
 ## Supported versions
 
 Wheels are available for the following `mamba-ssm` versions:
